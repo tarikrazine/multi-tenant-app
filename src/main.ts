@@ -1,3 +1,4 @@
+import { env } from "./config/env";
 import { logger } from "./utils/logger";
 import { buildServer } from "./utils/server";
 
@@ -13,7 +14,8 @@ async function main() {
   const app = await buildServer();
 
   await app.listen({
-    port: 3000,
+    port: env.PORT,
+    host: env.HOST,
   });
 
   const signals = ["SIGINT", "SIGTERM"];
@@ -27,7 +29,7 @@ async function main() {
     });
   }
 
-  logger.info("Server is Running at http://localhost:3000");
+  logger.info(`Server is Running at http://${env.HOST}:${env.PORT}`);
 }
 
 main();

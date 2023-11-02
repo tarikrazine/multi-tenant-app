@@ -1,1 +1,1 @@
-Mutli-tenant application
+Multi-Tenanted application Fastify, Drizzle ORM, TypeScript & Neon.
