@@ -26,4 +26,4 @@ jobs:
         run: bun install
 
       - name: Run migrate file
-        run: bin migrate
+        run: bun migrate
