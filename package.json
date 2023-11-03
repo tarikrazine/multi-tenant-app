@@ -3,7 +3,7 @@
     "dev": "tsx watch src/main.ts",
     "migrations": "drizzle-kit generate:pg",
     "push": "drizzle-kit push:pg",
-    "studio": "drizzle-kit studio:pg",
+    "studio": "drizzle-kit studio",
     "migrate": "tsx ./src/migrate.ts"
   },
   "dependencies": {
