@@ -8,6 +8,27 @@
       "when": 1698963230438,
       "tag": "0000_safe_shinko_yamashiro",
       "breakpoints": false
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1698965328324,
+      "tag": "0001_silky_leopardon",
+      "breakpoints": false
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1698965738372,
+      "tag": "0002_charming_frog_thor",
+      "breakpoints": false
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1698970404006,
+      "tag": "0003_open_juggernaut",
+      "breakpoints": false
     }
   ]
 }
