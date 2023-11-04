@@ -1,8 +1,9 @@
 import argon2 from "argon2";
+import { eq } from "drizzle-orm";
 
 import { db } from "../../db";
 import { usersSchema } from "../../db/schema/user";
-import { eq } from "drizzle-orm";
+import { usersToRolesSchema } from "../../db/schema/userToRole";
 
 export async function createUser(data: typeof usersSchema.$inferInsert) {
   const hashedPassword = await argon2.hash(data.password);
@@ -11,6 +12,7 @@ export async function createUser(data: typeof usersSchema.$inferInsert) {
     ...data,
     password: hashedPassword,
   }).returning({
+    id: usersSchema.id,
     name: usersSchema.name,
     email: usersSchema.email,
     applicationId: usersSchema.applicationId,
@@ -26,4 +28,12 @@ export async function getUsersByApplication(applicationId: string) {
   );
 
   return results;
+}
+
+export async function assignRoleToUser(
+  data: typeof usersToRolesSchema.$inferInsert,
+) {
+  const result = await db.insert(usersToRolesSchema).values(data).returning();
+
+  return result[0];
 }
